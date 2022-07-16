@@ -2,3 +2,6 @@
 - org-babel
 - org-tangle 사용
 * right command to Meta key
+
+* package repo and use-package settings
+* auto update package
