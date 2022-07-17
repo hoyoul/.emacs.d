@@ -43,3 +43,7 @@
 
 * undo tree
 - it shows undo history to tree style
+
+* neotree
+- it shows directories like window file explorer.
+- you should setting global key to neotree-toggle which can show directories.
