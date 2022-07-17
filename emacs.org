@@ -112,27 +112,27 @@
 * font settings
 #+BEGIN_SRC emacs-lisp
 
- (defun holy/set-font-faces ()		
-   (message "Setting faces!")
-   ;; (set-face-attribute 'default nil :font "Fira Code" :height holy/default-font-size)
-      (set-face-attribute 'default nil :font "Fira Code"  :height 180)
-   ;; (set-face-attribute 'default nil :font "Fira Code Retina-14" :height holy/default-font-size)
+   (defun holy/set-font-faces ()		
+     (message "Setting faces!")
+     ;; (set-face-attribute 'default nil :font "Fira Code" :height holy/default-font-size)
+        (set-face-attribute 'default nil :font "Fira Code"  :height 180)
+     ;; (set-face-attribute 'default nil :font "Fira Code Retina-14" :height holy/default-font-size)
 
-       ;; Set the fixed pitch face
-   ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height holy/default-font-size) 
-   (set-face-attribute 'fixed-pitch nil :font "Fira Code"  :height 180)
-       ;; Set the variable pitch face
-   ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height holy/default-font-size :weight 'regular)
-      (set-face-attribute 'variable-pitch nil :font "Cantarell"  :height 180)
-)
+        ;; Set the fixed pitch face
+        ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height holy/default-font-size) 
+        (set-face-attribute 'fixed-pitch nil :font "Fira Code"  :height 180)
+        ;; Set the variable pitch face
+        ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height holy/default-font-size :weight 'regular)
+        (set-face-attribute 'variable-pitch nil :font "Cantarell"  :height 180)
+        )
 
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-       (lambda (frame)
-               (setq doom-modeline-icon t)
-           (with-selected-frame frame
-                (holy/set-font-faces))))
-    (holy/set-font-faces))
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+         (lambda (frame)
+                 (setq doom-modeline-icon t)
+             (with-selected-frame frame
+                  (holy/set-font-faces))))
+      (holy/set-font-faces))
 
 #+END_SRC
 
@@ -347,4 +347,11 @@
       ("b" hydra-ibuffer-main/body "back" :color blue))
 
   (add-hook 'ibuffer-hook #'hydra-ibuffer-main/body)
+#+END_SRC
+
+* org list marker to dot
+#+BEGIN_SRC emacs-lisp
+(font-lock-add-keywords 'org-mode
+                          '(("^ *\\([-]\\) "
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 #+END_SRC
