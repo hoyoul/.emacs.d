@@ -1,9 +1,7 @@
 # created by holy
-
 auto-save-list/
 .last-package-update-day
-# Created by https://www.toptal.com/developers/gitignore/api/emacs
-# Edit at https://www.toptal.com/developers/gitignore?templates=emacs
+init.el
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
