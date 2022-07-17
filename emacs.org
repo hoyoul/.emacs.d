@@ -107,3 +107,30 @@
   :custom ((doom-modeline-height 18)))
 
 #+END_SRC
+
+* font settings
+#+BEGIN_SRC emacs-lisp
+
+ (defun holy/set-font-faces ()		
+   (message "Setting faces!")
+   ;; (set-face-attribute 'default nil :font "Fira Code" :height holy/default-font-size)
+      (set-face-attribute 'default nil :font "Fira Code"  :height 180)
+   ;; (set-face-attribute 'default nil :font "Fira Code Retina-14" :height holy/default-font-size)
+
+       ;; Set the fixed pitch face
+   ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height holy/default-font-size) 
+   (set-face-attribute 'fixed-pitch nil :font "Fira Code"  :height 180)
+       ;; Set the variable pitch face
+   ;; (set-face-attribute 'variable-pitch nil :font "Cantarell" :height holy/default-font-size :weight 'regular)
+      (set-face-attribute 'variable-pitch nil :font "Cantarell"  :height 180)
+)
+
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+       (lambda (frame)
+               (setq doom-modeline-icon t)
+           (with-selected-frame frame
+                (holy/set-font-faces))))
+    (holy/set-font-faces))
+
+#+END_SRC

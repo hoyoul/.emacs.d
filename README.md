@@ -16,3 +16,7 @@
 - `M-x all-the-icons-install-fonts` 실행
 - 'M-x package-refresh-contents' 실행
 
+* font settings
+- Firacode(fixed font), Cantarell(variable font) setting.
+- unless all-the-icons-install-font, u can see broken icon.
+
