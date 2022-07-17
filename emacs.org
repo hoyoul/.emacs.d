@@ -159,3 +159,10 @@
 ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 ))
 #+END_SRC
+
+* lorem ipsum
+#+BEGIN_SRC emacs-lisp
+(use-package lorem-ipsum
+:config
+(lorem-ipsum-use-default-bindings))
+#+END_SRC
