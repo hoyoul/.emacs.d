@@ -76,3 +76,16 @@
 ;; Set up the visible bell
 (setq visible-bell t)
 #+end_src
+
+* yasnippets
+#+begin_src emacs-lisp
+(use-package yasnippet
+  :init
+  (yas-global-mode 1)
+  ;; (add-to-list 'yas-snippet-dirs "~/Dropbox/WorkSpace/emacs/snippets")
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
+  :bind
+  ("C-c s" . yas-insert-snippet)
+  ("C-c n" . yas-new-snippet)
+  ("C-c v" . yas-visit-snippet-file))
+#+end_src
