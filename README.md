@@ -37,3 +37,9 @@
 - rainbow make parenthese colored.
 - highlight make more bright parenthese on cursor.
 - if u use them, turn on them.
+
+* org-roam
+- store notes to dropbox for me.
+
+* undo tree
+- it shows undo history to tree style

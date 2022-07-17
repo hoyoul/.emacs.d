@@ -1,3 +1,4 @@
+
 # ------------------------------------------------------------------------------
 #+TITLE: Emacs From Scratch Configuration    
 #+AUTHOR:    Holy Frege
@@ -214,4 +215,27 @@
     (setq highlight-parentheses-colors '("green", "gold" "red" "medium spring green" "cyan" "dark orange" "deep pink"))
     :custom-face
     (highlight-parentheses-highlight ((t (:weight bold)))))
+#+END_SRC
+
+
+* org-roam
+#+BEGIN_SRC emacs-lisp
+  (use-package org-roam
+    :after org
+    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+    :custom
+    (org-roam-directory "/Users/holy/Dropbox/org/RoamNotes") ; replace with your path
+    :bind (("C-c r l" . org-roam-buffer-toggle)
+           ("C-c r f" . org-roam-node-find))
+    ; global-page-break-lines-mode will break the org-roam buffer
+    :hook ( org-roam-mode . (lambda () (global-page-break-lines-mode -1)))
+    :config
+    (org-roam-setup))
+#+END_SRC
+
+* undo tree
+#+BEGIN_SRC emacs-lisp
+(use-package undo-tree
+  :init
+  (undo-tree-mode))
 #+END_SRC

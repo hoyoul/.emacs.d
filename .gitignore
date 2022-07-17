@@ -1,6 +1,7 @@
 # created by holy
 auto-save-list/
 .last-package-update-day
+org-roam.db
 init.el
 
 ### Emacs ###
