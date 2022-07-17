@@ -166,3 +166,32 @@
 :config
 (lorem-ipsum-use-default-bindings))
 #+END_SRC
+
+
+* ivy and counsel
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+         :map ivy-minibuffer-map
+         ("TAB" . ivy-alt-done)
+         :map ivy-switch-buffer-map
+         ("C-d" . ivy-switch-buffer-kill)
+         :map ivy-reverse-i-search-map
+         ("C-k" . ivy-previous-line)
+         ("C-d" . ivy-reverse-i-search-kill))
+  :config
+  (ivy-mode 1))
+
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode 1))
+
+(use-package counsel
+  :bind (("C-M-j" . 'counsel-switch-buffer)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history))
+  :config
+  (counsel-mode 1))
+
+#+END_SRC

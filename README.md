@@ -20,3 +20,15 @@
 - Firacode(fixed font), Cantarell(variable font) setting.
 - unless all-the-icons-install-font, u can see broken icon.
 
+* org bullet heading
+- change headings on org mode
+
+* numbering window on multiples
+- use ace-window
+
+* lorem ipsum
+- for random string
+
+* ivy & counsel
+- when u use some command without candidates like find-files(C-x C-f), you don't feel comfortable.
+- ivy and counsel give candidates on minibuffer.
