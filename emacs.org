@@ -89,3 +89,21 @@
   ("C-c n" . yas-new-snippet)
   ("C-c v" . yas-visit-snippet-file))
 #+end_src
+
+
+* UI theme
+#+BEGIN_SRC emacs-lisp
+(use-package doom-themes
+  :init (load-theme 'doom-monokai-spectrum t))
+#+END_SRC
+
+* doom mode line
+#+BEGIN_SRC emacs-lisp
+(use-package all-the-icons)
+
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :config (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
+  :custom ((doom-modeline-height 18)))
+
+#+END_SRC
