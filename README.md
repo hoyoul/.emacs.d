@@ -32,3 +32,8 @@
 * ivy & counsel
 - when u use some command without candidates like find-files(C-x C-f), you don't feel comfortable.
 - ivy and counsel give candidates on minibuffer.
+
+* rainbow delimeters & highlight parentheses
+- rainbow make parenthese colored.
+- highlight make more bright parenthese on cursor.
+- if u use them, turn on them.

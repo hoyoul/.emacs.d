@@ -195,3 +195,23 @@
   (counsel-mode 1))
 
 #+END_SRC
+
+* rainbow delimeters
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-delimiters
+    :hook ((prog-mode org-mode) . rainbow-delimiters-mode))
+
+  (show-paren-mode 1)
+#+END_SRC
+
+* highlight parentheses
+#+BEGIN_SRC emacs-lisp
+  (use-package highlight-parentheses
+    :ensure t
+    :hook
+    ((prog-mode org-mode) . highlight-parentheses-mode)
+    :config
+    (setq highlight-parentheses-colors '("green", "gold" "red" "medium spring green" "cyan" "dark orange" "deep pink"))
+    :custom-face
+    (highlight-parentheses-highlight ((t (:weight bold)))))
+#+END_SRC
