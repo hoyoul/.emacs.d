@@ -48,6 +48,21 @@
 - it shows directories like window file explorer.
 - you should setting global key to neotree-toggle which can show directories.
 
+<<<<<<< HEAD
 * hydra
 - hydra can make menu to varieties of buffer.(ex:buffer list, org  buffer, python buffer...)
 - I don't use it.
+=======
+* Hydra and ibuffer
+- buffer management. in case of switching buffer, just type C-x b but if u see all buffers using C-x C-b. The reason that you see all buffers is to delete sth. that needs hydra and ibuffer.
+
+* change list marker to dot marker in org mode
+- look better dot than -.
+
+* region highlight.
+- pressing C-spc, you can assign region. However, the region cannot distint from other contents. so changed region color.
+
+* slime for common lisp code
+- install sbcl and quicklisp(like package manager) on your system.
+- The emacs use the slime to connect sbcl on your system so you need to install slime for connection on your emacs.
+>>>>>>> 9073174986b7c4aa052640a2973393c485af37b1
