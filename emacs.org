@@ -356,3 +356,10 @@
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 #+END_SRC
 
+* common lisp ( slime )
+#+BEGIN_SRC emacs-lisp
+  (use-package slime
+  :init
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  (setq inferior-lisp-program "sbcl"))
+#+END_SRC
