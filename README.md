@@ -47,3 +47,7 @@
 * neotree
 - it shows directories like window file explorer.
 - you should setting global key to neotree-toggle which can show directories.
+
+* hydra
+- hydra can make menu to varieties of buffer.(ex:buffer list, org  buffer, python buffer...)
+- I don't use it.
