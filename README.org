@@ -92,3 +92,21 @@ is green,blue.
 #+attr_html: :width 400px
 #+attr_latex: :width 100px
 [[./img/after_company.png]]
+
+* Common lisp (sly)
+- install sbcl on your system.(brew install sbcl)
+- install quicklisp on your system.(follow link: https://www.quicklisp.org/beta/)
+- FYI: qucklisp is like package manager.
+- install sly and sly quicklisp
+  #+BEGIN_SRC emacs-lisp
+    (use-package sly
+      :ensure t
+      :config
+      (setq inferior-lisp-program "/usr/local/bin/sbcl")
+      )
+    (use-package sly-quicklisp
+      :ensure t
+      :config
+      (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/quicklisp")
+      )
+  #+END_SRC

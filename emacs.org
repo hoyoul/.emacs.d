@@ -63,6 +63,10 @@
    (auto-package-update-at-time "09:00"))
 #+end_src
 
+* "yes or no" to "y or n"
+#+BEGIN_SRC emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
 * Basic UI settings
 #+begin_src emacs-lisp
 (setq inhibit-startup-message t)
@@ -330,4 +334,21 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 3)
   (global-company-mode t))
+#+END_SRC
+* common lisp settings
+** sly
+#+BEGIN_SRC emacs-lisp
+  (use-package sly
+  :ensure t
+  :config
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  )
+#+END_SRC
+** sly-quicklisp
+#+BEGIN_SRC emacs-lisp
+  (use-package sly-quicklisp
+  :ensure t
+  :config
+  (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/quicklisp")
+  )
 #+END_SRC
