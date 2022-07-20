@@ -34,9 +34,11 @@
 - ivy and counsel give candidates on minibuffer.
 
 * rainbow delimeters & highlight parentheses
-- rainbow make parenthese colored.
-- highlight make more bright parenthese on cursor.
-- if u use them, turn on them.
+- both use easily to distint pair of parentheses. 
+- rainbow make parenthese 7 colored. I don't use it. so messy.
+- I just use highlight parenthesis which have 4 colors.
+- the parenthesis color on that cursor is cyan and next outside red, and the next parenthese
+is green,blue.
 
 * org-roam
 - store notes to dropbox for me.
@@ -48,13 +50,10 @@
 - it shows directories like window file explorer.
 - you should setting global key to neotree-toggle which can show directories.
 
-<<<<<<< HEAD
-* hydra
+* hydra & ibuffer
 - hydra can make menu to varieties of buffer.(ex:buffer list, org  buffer, python buffer...)
-- I don't use it.
-=======
-* Hydra and ibuffer
-- buffer management. in case of switching buffer, just type C-x b but if u see all buffers using C-x C-b. The reason that you see all buffers is to delete sth. that needs hydra and ibuffer.
+- for example, if you want to see buffer list, then press C-x C-b to delete somthing buffers. However, you may hesitate what you press. At that time hydra can provide menu which has all of keys on that buffer.
+- I don't use hydra. Instead, I use ibuffer for buffer list. hydra can apply variety buffers. I don't need all of buffers. I only need to show menu on buffer list, thus I use ibuffer
 
 * change list marker to dot marker in org mode
 - look better dot than -.
@@ -62,7 +61,34 @@
 * region highlight.
 - pressing C-spc, you can assign region. However, the region cannot distint from other contents. so changed region color.
 
-* slime for common lisp code
-- install sbcl and quicklisp(like package manager) on your system.
-- The emacs use the slime to connect sbcl on your system so you need to install slime for connection on your emacs.
->>>>>>> 9073174986b7c4aa052640a2973393c485af37b1
+
+* which key
+- which-key shows all of keys matching prefix. here is example.
+- [before]
+#+CAPTION: before which-key
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/before_whichkey.png]]
+- [after]
+#+CAPTION: after which-key
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/after_whichkey.png]]
+
+
+* company mode
+- company means "complete anything" on the buffer.
+- [before]
+  #+CAPTION: before company mode
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/before_company.png]]
+- [after]
+  #+CAPTION: after company mode
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/after_company.png]]

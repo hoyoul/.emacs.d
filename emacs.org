@@ -200,12 +200,36 @@
 
 #+END_SRC
 
+* ivy-switch-buffer color configuration
+#+BEGIN_SRC emacs-lisp
+  ;; (require 'package)
+  ;; (package-initialize)
+  ;; (require 'swiper)
+
+  ;; (progn
+  ;;   (set-face-attribute 'ivy-current-match nil :foreground "white")
+  ;;   (set-face-attribute 'ivy-minibuffer-match-face-2 nil :foreground "white" :background "red")
+  ;;   (set-face-attribute 'ivy-minibuffer-match-face-3 nil :foreground "white" :background "darkgreen")
+  ;;   (set-face-attribute 'ivy-minibuffer-match-face-4 nil :foreground "white" :background "blue")
+  ;;   ;;
+  ;;   (set-face-attribute 'swiper-match-face-2         nil :foreground "white" :background "red")
+  ;;   (set-face-attribute 'swiper-match-face-3         nil :foreground "white" :background "darkgreen")
+  ;;   (set-face-attribute 'swiper-match-face-4         nil :foreground "white" :background "blue"))
+#+END_SRC
 * rainbow delimeters
 #+BEGIN_SRC emacs-lisp
-  (use-package rainbow-delimiters
-    :hook ((prog-mode org-mode) . rainbow-delimiters-mode))
+    ;; (use-package rainbow-delimiters
+    ;;   :ensure t
+    ;;   :hook ((prog-mode org-mode) . rainbow-delimiters-mode))
 
-  (show-paren-mode 1)
+    ;; (setq rainbow-delimiters-outermost-only-face-count 0)
+    ;; (setq rainbow-delimiters-max-face-count 1)
+    ;; (custom-set-faces
+    ;;  '(rainbow-delimiters-depth-1-face ((t (:foreground "#7070a0")))))
+  ;; (set-face-attribute 'rainbow-delimiters-unmatched-face nil
+  ;;                     :foreground 'unspecified
+  ;;                     :inherit 'error)
+
 #+END_SRC
 
 * highlight parentheses
@@ -214,10 +238,14 @@
     :ensure t
     :hook
     ((prog-mode org-mode) . highlight-parentheses-mode)
-    :config
-    (setq highlight-parentheses-colors '("green", "gold" "red" "medium spring green" "cyan" "dark orange" "deep pink"))
+    :init
+    ;; (setq highlight-parentheses-colors '("green" "red" "red orange" ))
+    
+    (setq highlight-parentheses-colors '("#00e1ff" "red" "green" "blue" ))
     :custom-face
-    (highlight-parentheses-highlight ((t (:weight bold)))))
+    ;; (highlight-parentheses-highlight ((t (:weight bold))))
+    )
+
 #+END_SRC
 
 
@@ -262,11 +290,44 @@
                           '(("^ *\\([-]\\) "
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 #+END_SRC
-
-* common lisp ( slime )
+* projectile
 #+BEGIN_SRC emacs-lisp
-  (use-package slime
-  :init
-  (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  (setq inferior-lisp-program "sbcl"))
+  ;; (use-package projectile
+  ;;   :diminish projectile-mode
+  ;;   :config
+  ;;   (projectile-mode +1)
+  ;;   (setq projectile-enable-caching t)
+  ;;   (setq projectile-indexing-method 'alien)
+  ;;   :custom
+  ;;   ((projectile-completion-system 'ivy))
+  ;;   :bind-keymap
+  ;;   ("C-c p" . projectile-command-map)
+  ;;   :init
+  ;;   (when (file-directory-p "/Users/holy/MyProjects")
+  ;;         (setq projectile-project-search-path '("/Users/holy/MyProjects")))
+  ;;       (setq projectile-switch-project-action #'projectile-dired))
+
+  ;; (use-package counsel-projectile
+  ;;   :ensure t
+  ;;   :config
+  ;;   (counsel-projectile-mode))
+
+#+END_SRC
+* which key
+#+BEGIN_SRC emacs-lisp
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 1))
+
+#+END_SRC
+* company mode
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3)
+  (global-company-mode t))
 #+END_SRC
