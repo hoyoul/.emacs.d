@@ -110,3 +110,32 @@ is green,blue.
       (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/quicklisp")
       )
   #+END_SRC
+
+* transpose window
+- window move package.
+- when you programming sth, you need two windows. The one is scratch buffer and the other is repl.
+  And the top is usually scratch buffer and bottom is sly repl.
+- if you want to adjust window location of frame, this package is handy.
+- [code]
+  #+BEGIN_SRC emacs-lisp
+    (use-package buffer-move
+    :ensure t
+    :config
+    (global-set-key (kbd "<C-S-up>")     'buf-move-up)
+    (global-set-key (kbd "<C-S-down>")   'buf-move-down)
+    (global-set-key (kbd "<C-S-left>")   'buf-move-left)
+    (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+    )
+  #+END_SRC
+- [before]
+  #+CAPTION: before transpose
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/before_transpose.png]]
+- [after]
+  #+CAPTION: after transpose
+#+NAME: 
+#+attr_html: :width 400px
+#+attr_latex: :width 100px
+[[./img/after_transpose.png]]
