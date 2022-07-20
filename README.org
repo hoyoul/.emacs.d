@@ -157,3 +157,11 @@ is green,blue.
   check the name is the same on your upstream(like github repo). this
   variable is just check whether the name is first upstream or local.
 - fallback: property replacement(적절하게 알아서 대체)
+
+
+* disable backup and autosave file.
+- I don't like to save backup or autosave file, so I disabed them.
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+#+END_SRC

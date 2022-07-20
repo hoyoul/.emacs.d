@@ -63,9 +63,16 @@
    (auto-package-update-at-time "09:00"))
 #+end_src
 
+
 * "yes or no" to "y or n"
 #+BEGIN_SRC emacs-lisp
 (fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
+* disable backup and autosave file.
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
 #+END_SRC
 * Basic UI settings
 #+begin_src emacs-lisp
