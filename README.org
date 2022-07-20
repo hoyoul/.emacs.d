@@ -121,10 +121,10 @@ is green,blue.
     (use-package buffer-move
     :ensure t
     :config
-    (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-    (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-    (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-    (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+    (global-set-key (kbd "<C-up>")     'buf-move-up)
+    (global-set-key (kbd "<C-down>")   'buf-move-down)
+    (global-set-key (kbd "<C-left>")   'buf-move-left)
+    (global-set-key (kbd "<C-right>")  'buf-move-right)
     )
   #+END_SRC
 - [before]
@@ -139,3 +139,21 @@ is green,blue.
 #+attr_html: :width 400px
 #+attr_latex: :width 100px
 [[./img/after_transpose.png]]
+
+* magit
+- magit is popular git utility on emacs
+- below is source.
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :custom
+    (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+  (setq magit-branch-read-upstream-first 'fallback)
+  (use-package forge
+    :ensure t)
+#+END_SRC
+- forge is utility to access on github or gitlab.
+- magit-branch-read-upstream-first: if you create branch, you should
+  check the name is the same on your upstream(like github repo). this
+  variable is just check whether the name is first upstream or local.
+- fallback: property replacement(적절하게 알아서 대체)

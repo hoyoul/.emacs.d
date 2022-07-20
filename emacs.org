@@ -357,9 +357,21 @@
     (use-package buffer-move
     :ensure t
     :config
-    (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-    (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-    (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-    (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+    (global-set-key (kbd "<C-up>")     'buf-move-up)
+    (global-set-key (kbd "<C-down>")   'buf-move-down)
+    (global-set-key (kbd "<C-left>")   'buf-move-left)
+    (global-set-key (kbd "<C-right>")  'buf-move-right)
     )
+#+END_SRC
+* magit
+#+BEGIN_SRC emacs-lisp
+
+  (use-package magit
+    :custom
+    (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+  (setq magit-branch-read-upstream-first 'fallback)
+  (use-package forge
+    :ensure t)
+
 #+END_SRC
