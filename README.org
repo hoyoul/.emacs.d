@@ -165,3 +165,26 @@ is green,blue.
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
 #+END_SRC
+
+* Prolog Development
+- install prolog on your system(brew install swi-prolog)
+  test: swipl
+- emacs has built-in prolog mode but has flaws. So I replace it with bruda prolog mode.
+  https://bruda.ca/emacs/prolog_mode_for_emacs
+- [source]
+  load bruda-prolog.el which connects swipl.
+  prolog-electric is pretty alignment, but I don't know and use it.
+  
+  #+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/")
+  (load "prolog.el")
+  (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
+  (setq prolog-electric-if-then-else-flag t)
+  #+END_SRC
+- How to programming.
+  (1) open a new prolog buffer(like temp.pl)
+  (2) C-c Enter (u can see prolog Repl)
+  (3) write prolog knowledge(fact or rules) on your prolog buffer and press C-C C-b.
+  (4) query on your repl
+- 
+  

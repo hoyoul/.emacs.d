@@ -33,6 +33,7 @@
 (setq ns-command-modifier 'meta)
 #+end_src
 
+
 * package setting
 #+begin_src emacs-lisp
   ;; Initialize package sources
@@ -391,3 +392,11 @@
     :ensure t)
 
 #+END_SRC
+* prolog
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/")
+  (load "prolog.el")
+  (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
+  (setq prolog-electric-if-then-else-flag t)
+#+END_SRC
+
