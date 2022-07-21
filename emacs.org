@@ -359,6 +359,15 @@
   (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/quicklisp")
   )
 #+END_SRC
+** sly-asdf
+#+BEGIN_SRC emacs-lisp
+  (use-package sly-asdf
+  :ensure t)
+#+END_SRC
+** sly-contribs
+#+BEGIN_SRC emacs-lisp
+(setq sly-contribs '(sly-asdf sly-mrepl sly-scratch ))
+#+END_SRC
 * transpose window
 #+BEGIN_SRC emacs-lisp
     (use-package buffer-move
