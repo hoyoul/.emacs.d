@@ -8,11 +8,18 @@
 #+PROPERTY: header-args :emacs-lisp :tangle ./init.el :mkdirp yes
 # ------------------------------------------------------------------------------
 
+* org babel preparation
+#+BEGIN_SRC emacs-lisp
+  (use-package ob-prolog
+  :ensure t)
+  (setq org-babel-prolog-command "swipl")
+#+END_SRC
 * Org babel
 #+begin_src emacs-lisp
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
+     (prolog . t)
      (python . t)))
   (setq org-confirm-babel-evaluate nil)
 #+end_src
