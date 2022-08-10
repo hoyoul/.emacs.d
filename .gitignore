@@ -3,7 +3,9 @@ auto-save-list/
 .last-package-update-day
 org-roam.db
 init.el
-
+.DS_Store
+quicklisp/
+var/
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~

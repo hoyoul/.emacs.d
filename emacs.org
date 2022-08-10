@@ -40,7 +40,17 @@
 (setq ns-command-modifier 'meta)
 #+end_src
 
-
+* exec-path
+#+BEGIN_SRC emacs-lisp
+  (use-package exec-path-from-shell
+    :ensure t
+    :config
+    (add-hook
+     'eshell-mode-hook
+     (lambda ()
+       (setq pcomplete-cycle-completions nil))))
+#+END_SRC
+* ox-gist
 * package setting
 #+begin_src emacs-lisp
   ;; Initialize package sources
@@ -364,7 +374,7 @@
   (use-package sly-quicklisp
   :ensure t
   :config
-  (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/quicklisp")
+  (add-to-list 'load-path "/Users/holy/quicklisp/")
   )
 #+END_SRC
 ** sly-asdf
@@ -388,6 +398,7 @@
     )
 #+END_SRC
 * magit
+** magit
 #+BEGIN_SRC emacs-lisp
 
   (use-package magit
@@ -399,11 +410,39 @@
     :ensure t)
 
 #+END_SRC
-* prolog
+** gist
+#+BEGIN_SRC emacs-lisp
+  (use-package gist
+  :ensure t)
+#+END_SRC
+* prolog settings
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'load-path "/Users/holy/.emacs.d/lisp/")
   (load "prolog.el")
   (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
   (setq prolog-electric-if-then-else-flag t)
 #+END_SRC
+* ruby settings
+** rbenv
+#+BEGIN_SRC emacs-lisp
+  (use-package rbenv
+   :ensure t
+   :config
+   (global-rbenv-mode)
+   )
+   ;; :config
+   ;; (setq rbenv-installation-dir "/opt/homebrew/rbenv")
+   ;; (global-rbenv-mode)
+   ;; (rbenv-use-global))
+#+END_SRC
+** inf-ruby
+#+BEGIN_SRC emacs-lisp
+(use-package inf-ruby
+  :ensure t)
+(autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+#+END_SRC
+* eshell
+#+BEGIN_SRC emacs-lisp
 
+#+END_SRC

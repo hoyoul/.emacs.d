@@ -187,4 +187,21 @@ is green,blue.
   (3) write prolog knowledge(fact or rules) on your prolog buffer and press C-C C-b.
   (4) query on your repl
 - 
+
+* prolog org-babel setting
+- download ob-prolog.el and then setting (prolog t) in org-babel.
+- u can use prolog org src-block but you necessary to use :output and :session
+- Now, I found some error when I use both use prolog org babel and prolog repl.
+- if I use C-c enter for prolog repl, prolog repl don't respond it.ㅐ
   
+
+  
+  
+
+* ruby Development
+- rbenv install for ruby version management
+- if you are not installing exe-path for eshell, rbenv.el is not working.
+
+
+* gist setting
+- install gist.el for github gist 
